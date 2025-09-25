@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/pcr', function () {
-    return 'Selamat datang di website kampus PCR!';
+    return 'Selamat datang di website kampus PCR! testtttt';
 });
 
 Route::get('/mahasiswa', function () {
