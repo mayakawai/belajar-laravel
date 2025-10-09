@@ -1,22 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\HomeController;
 
-Route::get('/pcr', function () {
-    return 'Selamat datang di website kampus PCR! testtttt';
-});
+Route::get('/home',[HomeController::class, 'index'])
+    ->name('home');
 
-Route::get('/mahasiswa', function () {
-    return 'hallo mahasiswa!';
-
-});
-
-Route::get('/nama/{maya}', function () {
-    return 'maya!';
-
-});
-
-Route::get('/nim/{maya}', function ($maya = '') {
-    return 'nim saya adalah:'.$maya;
-
-});
+Route::post('/question/store', [QuestionController::class, 'store'])
+    ->name('question.store');
