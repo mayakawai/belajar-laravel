@@ -11,9 +11,9 @@ class QuestionController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(Request $request): \Illuminate\Http\RedirectResponse
 {
     //dd($request->all());
 
@@ -36,7 +36,9 @@ class QuestionController extends Controller
     //return redirect()->back()->with('info', 'Oops... Saldo Kamu Kurang!');
     //return redirect()->back()->with('info', 'Terimakasih Fikri! Pertanyaan ini:
     //Tolong jelaskan bagaimana cara mendaftar di PCR akan segera direspon melalui email fikri@pcr.ac.id');
-    
+
+    // Always return a response to fix the error
+    return redirect()->back()->with('info', 'Pertanyaan kamu telah dikirim!');
 
     /**
      * Display the specified resource.
@@ -44,8 +46,6 @@ class QuestionController extends Controller
      * @param  string  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(string $id)
-    {
-        //
-    }
+
+}
 }
